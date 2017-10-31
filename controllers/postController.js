@@ -1,4 +1,4 @@
-var db = require('./../models/post.js');
+var db = require('./../models');
 
  var postController = {};
 
@@ -10,9 +10,7 @@ postController.post = function(req, res) {
     userId, //need tokenize
   } = req.body;
 
-  console.log(req.body, 'postController req')
-
-  var post = new db({
+  var post = new db.Post({
     title,
     text,
     link,
@@ -26,6 +24,23 @@ postController.post = function(req, res) {
       success: true,
       data: newPost,
     })
+  }).catch(function(err){
+    res.status(500).json({
+      success: false,
+      message: err,
+    });
+  });
+}
+
+postController.getAll = function(req,res) {
+  db.Post.find({}).populate({
+    path: '_creator',
+    select: 'username -_id'
+    }).then(function(posts){
+    return res.status(200).json({
+      success: true,
+      data: posts,
+    });
   }).catch(function(err){
     res.status(500).json({
       success: false,

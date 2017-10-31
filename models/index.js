@@ -1,3 +1,7 @@
 var User = require('./User');
+var Post = require('./Post');
 
-module.exports = User;
+module.exports = {
+  User,
+  Post
+};

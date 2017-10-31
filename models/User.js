@@ -13,7 +13,15 @@ var userSchema = new Schema({
     type: String,
     required: true,
     minlegnth: [5, "password must be at least 5 chars"],
-  }
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 //write encryption for password

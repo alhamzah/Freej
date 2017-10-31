@@ -1,11 +1,11 @@
-var db = require('./../models/User.js');
+var db = require('./../models');
 
  var userController = {};
 
 userController.post = function(req, res) {
   var {username, password} = req.body;
 
-  var user = new db({
+  var user = new db.User({
     username,
     password
   });
