@@ -1,1 +1,6 @@
 extends layout
+
+block content
+    ul
+        each post, i in posts
+            li= post.id
