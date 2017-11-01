@@ -1,6 +1,15 @@
 extends layout
 
 block content
-    ul
-        each post, i in posts
-            li= post.id
+  ul(dir="rtl")
+    each post in posts
+        li 
+          p(dir='rtl')
+            a(href=post.link)
+              =post.title
+          p(dir='rtl')
+           font(color='blue')
+          p(dir='rtl')
+            font(color='red')
+              =post.text
+          hr

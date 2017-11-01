@@ -3,7 +3,29 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+    link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+
+  body  
+    div
+      div
+        nav.navbar.navbar-inverse.navbar-custom(role="navigation", style="padding-left:130px;")
+          ul.nav.navbar-nav
+            li
+              a(href="/") Home
+            li
+              a(href="/posts") Posts
+            li
+              a(href="/post/new") New Post
+            li
+              a(href="/signup") Sign up
+            li
+              a(href="/about") About us
+                span.sr-only (current)
+            li
+              a(href="/contact") Contact us
+      br
+
     block content
     br
     hr

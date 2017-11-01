@@ -20,10 +20,11 @@ postController.post = function(req, res) {
   console.log(JSON.stringify(post));
 
   post.save().then(function(newPost){
-    res.status(200).json({
-      success: true,
-      data: newPost,
-    })
+        res.redirect('signup/thankyou');
+    // res.status(200).json({
+      // success: true,
+      // data: newPost,
+    // })
   }).catch(function(err){
     res.status(500).json({
       success: false,
@@ -37,11 +38,9 @@ postController.getAll = function(req,res) {
     path: '_creator',
     select: 'username -_id'
     }).then(function(posts){
-    return res.status(200).json({
-      success: true,
-      data: posts,
-    });
-  }).catch(function(err){
+      return res.status(200).render('posts', {posts: posts})
+    })
+    .catch(function(err){
     res.status(500).json({
       success: false,
       message: err,

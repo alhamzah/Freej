@@ -1,6 +1,26 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  direction: rtl;
+}
+
+
+hr{
+    padding: 0px;
+    margin: 0px;    
+}
+
+input[type=text] {
+   width: 550px;
+}
+
+.navbar-custom {
+    color: #FFFFFF;
+    background-color: #CC3333;
+}
+
+textarea{
+    width: 550px;
 }
 
 a {

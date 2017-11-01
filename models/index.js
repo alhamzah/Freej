@@ -3,5 +3,5 @@ var Post = require('./Post');
 
 module.exports = {
   User,
-  Post
+  Post,
 };

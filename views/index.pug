@@ -3,3 +3,15 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+    ul
+      each post in posts
+          li 
+            p
+              a(href=post.link)
+                =post.title
+            p
+             font(color='blue')
+            p
+              font(color='red')
+                =post.text
+            hr

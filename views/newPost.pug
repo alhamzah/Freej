@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h5= title
+    form#form_post(name="addPost", method="post", action="/post")
+      span Title
+      span &nbsp;
+      input#input_title(name="title", type="text", placeholder="title")
+      br
+      br
+      span Link
+      input#input_link(name="link", type="text", placeholder="link")
+      br
+      br
+      span Text
+      span &nbsp;
+      textarea(name="text", placeholder="text")
+      br
+      button#submit_post(type="submit") submit

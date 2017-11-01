@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h5= title
+    form#form_signup(name="add_user", method="post", action="/signup")
+      span User Name
+      span &nbsp;
+      input#input_user_name(type="text", placeholder="User name", name="username")
+      br
+      br
+      span Password
+      span &nbsp;
+      input#input_password(type="text", placeholder="Password", name="password")
+      br
+      button#submit_user(type="submit") submit

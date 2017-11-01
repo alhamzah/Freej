@@ -13,10 +13,12 @@ userController.post = function(req, res) {
   console.log(JSON.stringify(user));
 
   user.save().then(function(newUser){
-    res.status(200).json({
-      success: true,
-      data: newUser,
-    })
+    res.redirect('signup/thankyou');
+
+    // status(200).json({
+      // success: true,
+      // data: newUser,
+    // })
   }).catch(function(err){
     res.status(500).json({
       success: false,
