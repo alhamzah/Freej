@@ -1,15 +1,15 @@
 extends layout
 
 block content
-  ul(dir="rtl")
+  ul
     each post in posts
         li 
-          p(dir='rtl')
+          p
             a(href=post.link)
               =post.title
-          p(dir='rtl')
+          p
            font(color='blue')
-          p(dir='rtl')
+          p
             font(color='red')
               =post.text
           hr

@@ -1,9 +1,22 @@
+html *
+{
+   
+  font-family: "DejaVu Serif" !important;
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
   direction: rtl;
 }
 
+li{
+    margin-top: 0px;
+}
+
+li:first-child {
+    margin-top:0;
+}
 
 hr{
     padding: 0px;
