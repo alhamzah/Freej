@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/freej', function(){
+var MONGODB_URI = 'mongodb://heroku_2tjx2h69:qr9de4q7ns1ceofge42799s111@ds245615.mlab.com:45615/heroku_2tjx2h69'
+mongoose.connect(MONGODB_URI, function(){
   console.log('Connected to the database...')
 });
 
