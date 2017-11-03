@@ -1,32 +1,20 @@
 doctype html
-html
+html(lang="en")
   head
     title= title
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
 
   body  
-    //- div
-    //-   div
-    //-     nav.navbar.navbar-inverse.navbar-custom(role="navigation", style="padding-left:130px;")
-    //-       ul.nav.navbar-nav
-    //-         li
-    //-           a(href="/") Home
-    //-         //- li
-    //-         //-   a(href="/posts") Posts
-    //-         //- li
-    //-         //-   a(href="/post/new") New Post
-    //-         //- li
-    //-         //-   a(href="/signup") Sign up
-    //-         li
-    //-           a(href="/about") About us
-    //-             span.sr-only (current)
-    //-         li
-    //-           a(href="/contact") Contact us
-      br
 
     block content
-    br
-    hr
-    footer
-        p Copyrights &copy; 2017
+      br
+      hr
+      footer
+          p Copyrights &copy; 2017
+  script(src="https://code.jquery.com/jquery-3.1.1.slim.min.js", integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n", crossorigin="anonymous")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js", integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb", crossorigin="anonymous")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js", integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn", crossorigin="anonymous")

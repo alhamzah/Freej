@@ -4,14 +4,18 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
 
 var MONGODB_URI = 'mongodb://heroku_2tjx2h69:qr9de4q7ns1ceofge42799s111@ds245615.mlab.com:45615/heroku_2tjx2h69'
-mongoose.connect(MONGODB_URI, function(){
-  console.log('Connected to the database...')
-});
 
-var db = mongoose.connection;
+var db
+
+MongoClient.connect(MONGODB_URI, function(err, databsae){
+  assert.equal(null, err);
+  console.log("Connected to the server ...");
+  db = databsae;
+});
 
 var index = require('./routes/index');
 var post = require('./routes/post');
@@ -33,10 +37,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/', index);
-app.use('/post', post);
+app.get('/', function(req, res){
+    db.collection('UCL').find({"clips":{ $exists: true, $ne: [] }}).toArray(function(err, arr){
+    console.log(arr)
+    res.render('index', { title: 'Freej', posts: arr});
+  });
+});
+
+// app.use('/post', post);
 // app.use('/signup', signup);
-app.use('/posts', posts);
+// app.use('/posts', posts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

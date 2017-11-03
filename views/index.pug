@@ -1,17 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p آخر الأهداف
+  h1(align='center') فريج
+  h4(align='center') آخر الأهداف
+
+  each post in posts
+    =post.homeTeamName + ' ' + post.awayTeamName
     ul
-      each post in posts
-          li 
-            p
-              a(href=post.link)
-                =post.title
-            p
-             font(color='blue')
-            p
-              font(color='red')
-                =post.text
-            hr
+      each clip in post.clips
+        li.list-group-item
+            a(href=clip.link)=clip.ar_title

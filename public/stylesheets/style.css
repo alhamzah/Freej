@@ -1,12 +1,12 @@
 html *
 {
    
-  font-family: "DejaVu Serif" !important;
+  font-family: "" !important;
 }
 
 body {
   padding: 50px;
-  font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;*/
   direction: rtl;
 }
 
