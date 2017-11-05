@@ -36,11 +36,23 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var comps = ["UCL", "BPL", "SerieA", "Bundesliga", "LaLiga", "Ligue1"];
 
 app.get('/', function(req, res){
-    db.collection('UCL').find({"clips":{ $exists: true, $ne: [] }}).toArray(function(err, arr){
-    console.log(arr)
-    res.render('index', { title: 'Freej', posts: arr});
+  console.log('login')
+  var ctr = 0;
+  var games = new Object();
+
+  comps.forEach(function(comp){
+    db.collection(comp).find({"clips":{ $exists: true, $ne: [] }}).toArray(function(err, arr){
+    games[comp] = arr;
+    console.log(games)
+    console.log(Object.keys(games).length)
+    if (Object.keys(games).length == comps.length) {
+      res.render('index', { title: 'Freej', games: games});
+    };
+  });
+
   });
 });
 

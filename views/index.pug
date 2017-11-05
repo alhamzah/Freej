@@ -4,9 +4,53 @@ block content
   h1(align='center') فريج
   h4(align='center') آخر الأهداف
 
-  each post in posts
-    =post.homeTeamName + ' ' + post.awayTeamName
-    ul
-      each clip in post.clips
-        li.list-group-item
-            a(href=clip.link)=clip.ar_title
+  
+  div(align='center')
+    a.btn.btn-primary(data-toggle='collapse', href='#collapseUCL', aria-expanded='false', aria-controls='collapseUCL') UCL
+    a.btn.btn-primary(data-toggle='collapse', href='#collapseBPL', aria-expanded='false', aria-controls='collapseBPL') BPL
+    a.btn.btn-primary(data-toggle='collapse', href='#collapseBPL', aria-expanded='false', aria-controls='collapseBPL') Bundesliga
+    a.btn.btn-primary(data-toggle='collapse', href='#collapseSerieA', aria-expanded='false', aria-controls='collapseSerieA') SerieA
+
+  #collapseUCL.collapse
+    - var key = games["UCL"]
+    if key.length
+      h1=comp
+      each post in key
+        =post.homeTeamName + ' ' + post.awayTeamName
+        ul.collapsablelist
+          each clip in post.clips
+            li.list-group-item
+                a(href=clip.link)=clip.ar_title
+
+  #collapseBPL.collapse
+    - var key = games["BPL"]
+    if key.length
+      h1=comp
+      each post in key
+        =post.homeTeamName + ' ' + post.awayTeamName
+        ul.collapsablelist
+          each clip in post.clips
+            li.list-group-item
+                a(href=clip.link)=clip.ar_title
+
+  #collapseBundesliga.collapse
+    - var key = games["Bundesliga"]
+    if key.length
+      h1=comp
+      each post in key
+        =post.homeTeamName + ' ' + post.awayTeamName
+        ul.collapsablelist
+          each clip in post.clips
+            li.list-group-item
+                a(href=clip.link)=clip.ar_title
+
+  #collapseSerieA.collapse
+    - var key = games["SerieA"]
+    if key.length
+      h1=comp
+      each post in key
+        =post.homeTeamName + ' ' + post.awayTeamName
+        ul.collapsablelist
+          each clip in post.clips
+            li.list-group-item
+                a(href=clip.link)=clip.ar_title
